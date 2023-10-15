@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <!-- <meta name="viewport" content="width=device-width, user-scalable=no"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Bumkids</title>
   <!-- Font Awesome -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
@@ -32,7 +36,7 @@
 </head>
 <body style="margin: auto; padding:20px; ">
   <div class="container mt-5 mb-5 d-flex justify-content-center">
-    <div class="card px-1 py-4">
+    <div class="card px-1 pt-4">
         <div class="card-body ">
           <div class="content" id="thankYouPage" style="display: none;">
             <div class="wrapper-1">
@@ -40,24 +44,28 @@
                 <h1>Thank you !</h1>
                 <p>Thông tin của bạn đã đươc ghi nhận, cảm ơn bạn đã ủng hộ <b>Bumkids</b> trong suốt thời gian qua ❤️!</p> 
               </div>
+            </div>
           </div>
-          </div>
-          <form id="formInfo" method="post">
+          <form id="formInfo" method="post" class="mb-2">
             <h2 class="card-title mb-0">
-              Thay đổi địa chỉ
+              Địa chỉ nhận hàng
             </h2>
-            <!-- <h6 class="mb-3 ">Bumkids Authentic</h6>  -->
             <div class="mb-3">
               <small class="agree-text"><b>Bumkids ©</b> by Trịnh Hiền</small>
             </div>
             <div class="row d-none">
               <div class="col-sm-12">
-                <div class="form-group"> <input class="form-control" name="sheetName" type="text" value="DiaChiSdt_2" readonly=""> </div>
+                <div class="form-group"> <input class="form-control" name="sheetName" type="text" value="DiaChiSdt_2" readonly="" required=""> </div>
+              </div>
+            </div>
+            <div class="row d-none">
+              <div class="col-sm-12">
+                <div class="form-group"> <input class="form-control" id="c" name="Comment_id" type="text" readonly="" required=""> </div>
               </div>
             </div>
             <div class="row d-none ">
               <div class="col-sm-12">
-                <div class="form-group"> <input class="form-control" id="u" name="Uid" type="text" placeholder="Uid" readonly=""> </div>
+                <div class="form-group"> <input class="form-control" id="u" name="Uid" type="text" placeholder="Uid" readonly="" required=""> </div>
               </div>
             </div>
             <div class="row">
@@ -83,11 +91,13 @@
               </div>
             </div>
             <div class=" d-flex flex-column text-center px-5 mt-3 mb-3">
-              <!-- <small class="agree-text"><b>Bumkids</b> by Trịnh Hiền ©</small> -->
-              <!-- <a href="#" class="terms">Facebook.com</a> -->
             </div> 
             <button class="btn btn-primary btn-block confirm-button">Xác nhận</button>
           </form>
+
+          <div>
+            <small class="agree-text">Mã đơn hàng: <span id="orderNo"></span></small>
+          </div>
         </div>
     </div>
 </div>
@@ -123,6 +133,7 @@
 
       let searchParams = new URL(window.location.href).searchParams;
       Array.from(searchParams).map(([key, value]) => {
+        key == 'c' && $('span#orderNo').text('pre_'+value);
         $(`input#${key}`).val(value || '')
       })
     })
