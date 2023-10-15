@@ -1,89 +1,131 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bumkids</title>
-	<!-- Font Awesome -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet"/>
-	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-	<style type="text/css">
-		body{background-color:#FFEBEE}.card{width:400px;background-color:#fff;border:none;border-radius: 12px}label.radio{cursor: pointer;width: 100%}label.radio input{position: absolute;top: 0;left: 0;visibility: hidden;pointer-events: none}label.radio span{padding: 7px 14px;border: 2px solid #eee;display: inline-block;color: #039be5;border-radius: 10px;width: 100%;height: 48px;line-height: 27px}label.radio input:checked+span{border-color: #039BE5;background-color: #81D4FA;color: #fff;border-radius: 9px;height: 48px;line-height: 27px}.form-control{margin-top: 10px;height: 48px;border: 2px solid #eee;border-radius: 10px}.form-control:focus{box-shadow: none;border: 2px solid #039BE5}.agree-text{font-size: 12px}.terms{font-size: 12px;text-decoration: none;color: #039BE5}.confirm-button{height: 50px;border-radius: 10px}
-	</style>
+  <title>Bumkids</title>
+  <!-- Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+  <style type="text/css">
+    body{background-color:#FFEBEE}.card{width:400px;background-color:#fff;border:none;border-radius: 12px}label.radio{cursor: pointer;width: 100%}label.radio input{position: absolute;top: 0;left: 0;visibility: hidden;pointer-events: none}label.radio span{padding: 7px 14px;border: 2px solid #eee;display: inline-block;color: #039be5;border-radius: 10px;width: 100%;height: 48px;line-height: 27px}label.radio input:checked+span{border-color: #039BE5;background-color: #81D4FA;color: #fff;border-radius: 9px;height: 48px;line-height: 27px}.form-control{margin-top: 10px;height: 48px;border: 2px solid #eee;border-radius: 10px}.form-control:focus{box-shadow: none;border: 2px solid #039BE5}.agree-text{font-size: 12px}.terms{font-size: 12px;text-decoration: none;color: #039BE5}.confirm-button{height: 50px;border-radius: 10px}
+  </style>
+  <style type="text/css"> 
+    .wrapper-2{
+      text-align:center;
+    }
+    h1{
+        font-family: 'Kaushan Script', cursive;
+      font-size:4em;
+      letter-spacing:3px;
+      color:#5892FF ;
+      margin:0;
+      margin-bottom:20px;
+    }
+    .wrapper-2 p{
+      margin:0;
+      font-size:1.0em;
+      letter-spacing:1px;
+    }   
+  </style>
 </head>
 <body style="margin: auto; padding:20px; ">
-	<div class="container mt-5 mb-5 d-flex justify-content-center">
+  <div class="container mt-5 mb-5 d-flex justify-content-center">
     <div class="card px-1 py-4">
-        <div class="card-body">
-        	<form id="formInfo">
+        <div class="card-body ">
+          <div class="content" id="thankYouPage" style="display: none;">
+            <div class="wrapper-1">
+              <div class="wrapper-2">
+                <h1>Thank you !</h1>
+                <p>Thông tin của bạn đã đươc ghi nhận, cảm ơn bạn đã ủng hộ <b>Bumkids</b> trong suốt thời gian qua ❤️!</p> 
+              </div>
+          </div>
+          </div>
+          <form id="formInfo" method="post">
             <h2 class="card-title mb-0">
-            	Thay đổi địa chỉ
-          	</h2>
-          	<!-- <h6 class="mb-3 ">Bumkids Authentic</h6>  -->
-          	<div class="mb-3">
-          		<small class="agree-text"><b>Bumkids</b> by Trịnh Hiền ©</small>
-          	</div>
-            <div class="row ">
+              Thay đổi địa chỉ
+            </h2>
+            <!-- <h6 class="mb-3 ">Bumkids Authentic</h6>  -->
+            <div class="mb-3">
+              <small class="agree-text"><b>Bumkids ©</b> by Trịnh Hiền</small>
+            </div>
+            <div class="row d-none">
               <div class="col-sm-12">
-                <div class="form-group"> <input class="form-control" name="sheetName" type="text" value="DiaChiSdt_2"> </div>
+                <div class="form-group"> <input class="form-control" name="sheetName" type="text" value="DiaChiSdt_2" readonly=""> </div>
               </div>
             </div>
-            <div class="row ">
+            <div class="row d-none ">
               <div class="col-sm-12">
-                <div class="form-group"> <input class="form-control" id="u" name="Uid" type="text" placeholder="Uid"> </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="form-group"> <input class="form-control" id="n" name="Name" type="text" placeholder="Họ Tên"> </div>
+                <div class="form-group"> <input class="form-control" id="u" name="Uid" type="text" placeholder="Uid" readonly=""> </div>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12">
-                <div class="form-group">
-                  <div class="input-group"> <input class="form-control" id="p" name="Phone" type="number" placeholder="Số điện thoại"> </div>
+                <div class="form-group"> <input class="form-control" id="n" name="Name" type="text" placeholder="Họ Tên" required="">
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-sm-12">
                 <div class="form-group">
-                  <div class="input-group"> <input class="form-control" id="a" name="Address" type="text" placeholder="Địa chỉ"> </div>
+                  <div class="input-group"> <input class="form-control" id="p" name="Phone" type="number" placeholder="Số điện thoại" required=""> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <div class="input-group"> <input class="form-control" id="a" name="Address" type="text" placeholder="Địa chỉ" required=""> 
+                  </div>
                 </div>
               </div>
             </div>
             <div class=" d-flex flex-column text-center px-5 mt-3 mb-3">
-            	<!-- <small class="agree-text"><b>Bumkids</b> by Trịnh Hiền ©</small> -->
-            	<!-- <a href="#" class="terms">Facebook.com</a> -->
+              <!-- <small class="agree-text"><b>Bumkids</b> by Trịnh Hiền ©</small> -->
+              <!-- <a href="#" class="terms">Facebook.com</a> -->
             </div> 
-          	<button class="btn btn-primary btn-block confirm-button">Xác nhận</button>
-        	</form>
+            <button class="btn btn-primary btn-block confirm-button">Xác nhận</button>
+          </form>
         </div>
     </div>
 </div>
 
-	<!-- MDB -->
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			let form = $('fomr#formInfo')
-			form.submit(function(e){
-				e.preventDefault()
-				$.post(
-         'https://script.google.com/macros/s/AKfycbx-RpHccIIbiID_WV1DOjOgZsYP4-ni1zz_e76VGQnlKS76zRYrmBnIG8rtFLL977aB/exec',
-          $(this).serialize(),
-          function(data){
-          	console.log(data)
+  <!-- MDB -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      
+      $('form#formInfo').submit(function(e){
+        e.preventDefault()
+        const myFormData = new FormData(event.target);
+        const formDataObj = {};
+        myFormData.forEach((value, key) => (formDataObj[key] = value));
+        console.log(formDataObj);
+        $('input').attr('disabled', '')
+        $('form#formInfo button').addClass('disabled')
+        $.ajax({
+          url: 'https://script.google.com/macros/s/AKfycbxxrRFbLOx9Hf5zgRikd-lfvc7jRk1XuEx9cczHBYKTIEf1FhMaXtDPmC4awlSY5dKe/exec',
+          type:'post', 
+          data: formDataObj,
+          success: function(res){
+            $('#thankYouPage').show()
+            $('form#formInfo').hide()
+          },
+          error: function(){
+            $('input').removeAttr('disabled', '')
+            $('form#formInfo button').removeClass('disabled')
           }
-        );
+        }) 
         return false;    
-			})
+      })
 
-			let searchParams = new URL(window.location.href).searchParams;
-			Array.from(searchParams).map(([key, value]) => {
-				$(`input#${key}`).val(value || '')
-			})
-		})
-	</script>
+      let searchParams = new URL(window.location.href).searchParams;
+      Array.from(searchParams).map(([key, value]) => {
+        $(`input#${key}`).val(value || '')
+      })
+    })
+  </script>
 </body>
 </html>
